@@ -1,33 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,} from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  //Declaro las propiedades del Componente
+  //DataBiding: Caracteristica que comunica datos entre el TS y HTML de manera unidireccional y bidireccional
+
+  //INTERPOLACIÓN : los datos viajan desde el componente hacia el DOM 
+
+  //Declaro la Variable:
   nombre: string
-  edad: number
-  correo: string
 
-  //Inicializo en el constructor las propiedades
+  //creo constructor e inicializo la variable
   constructor(){
-    this.nombre = 'Alejandro'
-    this.edad = 41
-    this.correo = 'abernalc@shd.gov.co' 
-   }
-
-  //ngOnInit Inicialización de propiedades o lógica del componente
-  ngOnInit(): void {
-    
+    this.nombre = 'Alejandro Bernal Castiblanco'
   }
 
-  //declaración del metodo del componente
-  mostrarNombre(): string {
-    return ` mi nombre es ${this.nombre} tengo ${this.edad} años y mi correo es ${this.correo}`
-  }
+
+ 
+ 
   
 }
 
