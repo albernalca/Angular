@@ -11,14 +11,18 @@ export class AppComponent {
 
   //INTERPOLACIÓN : los datos viajan desde el componente hacia el DOM 
 
-  //Declaro la Variable:
-  nombre: string
+  //Declaro la Variable asignando un valor:
+  nombre: string = 'Alejandro'
 
-  //creo constructor e inicializo la variable
+  //creo constructor usutizo una función interval de JS con la función flecha ()=>
   constructor(){
-    this.nombre = 'Alejandro Bernal Castiblanco'
+    setInterval( ()=> this.nombre='Juan Manuel',3000)
   }
 
+  //creo un metodo y recibe 2 parámetros de tipo number
+  getSuma(numero1:number, numero2:number){
+    return numero1 + numero2
+  }
 
  
  
