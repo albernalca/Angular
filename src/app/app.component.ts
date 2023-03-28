@@ -7,14 +7,12 @@ import { Component,} from '@angular/core';
 })
 export class AppComponent {
 
-texto = 'Esto es Event biding'
- 
-cambiarTexto(): void{
-  this.texto = "En el Click cambia de texto por Alejandro"
-}
+  texto: string
 
- 
- 
+  constructor(){
+    this.texto="";
+  }
+
   
 }
 
