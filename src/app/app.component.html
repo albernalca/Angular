@@ -4,21 +4,8 @@
     <span>Estructura de un componente Angular</span>
   </mat-toolbar>
   <br>
-  <div class="centro">
-    <mat-card>
-      <!--Interpolación-->
-      <h1>
-       Mi nombres es: {{nombre}}
-      </h1>
+  <h3>{{texto}}</h3>
+  <br>
+  <button class="btn btn-primary" (click)="cambiarTexto()">Click</button>
 
-      <!--en el metodo del TS cree los parámetros y  en el HTML paso los argumentos 10, 15-->
-      <h1>
-        la suma entre 10 y 15 = {{getSuma(10,15)}}
-      </h1>
-      <br>
-      <!--Aqui hago el property dibinding-->
-      <input type="text" class="form-control" [placeholder]="textoPlaceholder" [disabled]="deshabilitado">
-
-    </mat-card>
-  </div>
 </div>
