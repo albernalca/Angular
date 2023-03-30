@@ -23,7 +23,9 @@
         <tr *ngFor="let estudiante of listaEstudiantes">
           <th scope="row">{{estudiante.id}}</th>
           <td>{{estudiante.nombre}}</td>
-          <td>{{estudiante.estado}}</td>
+          <!--Directiva style con condicional-->
+          <td [style]="{'background-color': estudiante.estado ==='Casado'? 'red':'blue', 
+                        'color': estudiante.estado === 'Casado' ? 'white':'red' }">{{estudiante.estado}}</td>
         </tr>
       </tbody>
     </table>

@@ -13,7 +13,7 @@ export class AppComponent {
   // se crea un array
   listaEstudiantes: any[]=[
     {id:1, nombre: 'Alejandro Bernal Castiblanco', estado:'Casado'},
-    {id:2, nombre: 'Leidy Magaly Bermudez Buitrago', estado:'Casada'},
+    {id:2, nombre: 'Leidy Magaly Bermudez Buitrago', estado:'Casado'},
     {id:3, nombre: 'Edwin Bernal Castiblanco', estado:'Soltero'}
   ]
   
