@@ -7,11 +7,17 @@ import { Component,} from '@angular/core';
 })
 export class AppComponent {
 
-  texto: string
+  //databinding
+  titulo: string = 'Listado Estudiantes';
+  
+  // se crea un array
+  listaEstudiantes: any[]=[
+    {id:1, nombre: 'Alejandro Bernal Castiblanco', estado:'Casado'},
+    {id:2, nombre: 'Leidy Magaly Bermudez Buitrago', estado:'Casada'},
+    {id:3, nombre: 'Edwin Bernal Castiblanco', estado:'Soltero'}
+  ]
 
-  constructor(){
-    this.texto="";
-  }
+  columnas: any[] = ['id', 'nombre', 'estado'];
 
   
 }

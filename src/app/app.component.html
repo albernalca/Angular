@@ -1,18 +1,37 @@
-<div>
-  
-  <mat-toolbar color="primary">
-    <span>Estructura de un componente Angular</span>
-  </mat-toolbar>
-  <br>
+<mat-toolbar color="primary">
+  <span>Estructura de un componente Angular</span>
+</mat-toolbar>
 
-    <div class="input-group input-group-sm mb-3 col-3">
-    
-      <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" 
-      [(ngModel)]="texto">
-
+  <div class="container">
+    <br>
+    <div class="row">
+      <h1>{{titulo}}</h1>
     </div>
     <br>
-    <h1>{{texto}}</h1>
 
-</div>
+    <table mat-table [dataSource]="listaEstudiantes" class="mat-elevation-z8">
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID. </th>
+        <td mat-cell *matCellDef="let estudiante"> {{estudiante.id}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
+        <td mat-cell *matCellDef="let estudiante"> {{estudiante.nombre}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="estado">
+        <th mat-header-cell *matHeaderCellDef> ESTADO </th>
+        <td mat-cell *matCellDef="let estudiante"> {{estudiante.estado}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+      <tr mat-row *matRowDef="let estudiante of fuentedatos; columns: columnas;"></tr>
+
+    </table>
+
+  </div>
