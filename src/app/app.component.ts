@@ -16,10 +16,6 @@ export class AppComponent {
     {id:2, nombre: 'Leidy Magaly Bermudez Buitrago', estado:'Casada'},
     {id:3, nombre: 'Edwin Bernal Castiblanco', estado:'Soltero'}
   ]
-
-  //Se crea un array con las columnas
-  columnas: any[] = ['id', 'nombre', 'estado'];
-
   
 }
 

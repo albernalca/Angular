@@ -8,31 +8,25 @@
       <h1>{{titulo}}</h1>
     </div>
     <br>
-    <!--Tabla Angular Material-->
-    <!--Mediante event binding llamo el arreglo del ts listEstudiantes-->
-    <table mat-table [dataSource]="listaEstudiantes" class="mat-elevation-z8">
     
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> ID. </th>
-        <!--Se crea la variable estudiante y representa un elemento del arreglo lista estudiantes -->
-        <td mat-cell *matCellDef="let estudiante"> {{estudiante.id}} </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="nombre">
-        <th mat-header-cell *matHeaderCellDef> NOMBRE </th>
-        <td mat-cell *matCellDef="let estudiante"> {{estudiante.nombre}} </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="estado">
-        <th mat-header-cell *matHeaderCellDef> ESTADO </th>
-        <td mat-cell *matCellDef="let estudiante"> {{estudiante.estado}} </td>
-      </ng-container>
-       
-      <!--define la fila de encabezado de la tabla y especifica las columnas que se van a mostrar-->
-      <tr mat-header-row *matHeaderRowDef="columnas"></tr>
-      <!--define las filas de datos de la tabla y especifica la fuente de datos que se utilizará para rellenar la tabla-->
-      <tr mat-row *matRowDef="let estudiante of listaEstudiantes; columns: columnas;"></tr>
-
+    <!--Tabla Bootstrap-->
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--Utilizo ngFor para iterar sobre el arreglo listaEstudiantes -->
+        <tr *ngFor="let estudiante of listaEstudiantes">
+          <th scope="row">{{estudiante.id}}</th>
+          <td>{{estudiante.nombre}}</td>
+          <td>{{estudiante.estado}}</td>
+        </tr>
+      </tbody>
     </table>
+    
 
   </div>
