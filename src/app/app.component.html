@@ -20,13 +20,20 @@
       </thead>
       <tbody>
         <!--Utilizo ngFor para iterar sobre el arreglo listaEstudiantes -->
-        <tr *ngFor="let estudiante of listaEstudiantes">
+        <!--con la directiva [ngSwitch=] evaluo el estado del estudiante-->
+        <tr *ngFor="let estudiante of listaEstudiantes" [ngSwitch]="estudiante.estado">
           <th scope="row">{{estudiante.id}}</th>
           <td>{{estudiante.nombre}}</td>
 
-          <!--Directiva [ngClass] con condicional-->
+          <!--Directiva estructural *ngSwitchCase para cada estado asigno una clase diferente -->
           <td>
-            <span [ngClass]=" estudiante.estado === 'Activo' ? 'badge bg-success' : 'badge bg-danger'">
+            <span *ngSwitchCase="'Activo'" class="badge bg-success">
+              {{estudiante.estado}}
+            </span>
+            <span *ngSwitchCase="'Inactivo'" class="badge bg-danger">
+              {{estudiante.estado}}
+            </span>
+            <span *ngSwitchCase="'Pendiente'" class="badge bg-warning">
               {{estudiante.estado}}
             </span>
           </td>
