@@ -23,12 +23,18 @@
         <tr *ngFor="let estudiante of listaEstudiantes">
           <th scope="row">{{estudiante.id}}</th>
           <td>{{estudiante.nombre}}</td>
-          <!--Directiva style con condicional-->
-          <td [style]="{'background-color': estudiante.estado ==='Casado'? 'red':'blue', 
-                        'color': estudiante.estado === 'Casado' ? 'white':'red' }">{{estudiante.estado}}</td>
+
+          <!--Directiva [ngClass] con condicional-->
+          <td>
+            <span [ngClass]=" estudiante.estado === 'Activo' ? 'badge bg-success' : 'badge bg-danger'">
+              {{estudiante.estado}}
+            </span>
+          </td>
         </tr>
       </tbody>
     </table>
     
+
+
 
   </div>
